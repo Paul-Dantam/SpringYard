@@ -21,6 +21,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Transactional
     @Override
+    public void add(List<Customer> customers){
+        for(Customer customer:customers){
+            customerRepository.add(customer);
+        }
+    }
+
+    @Transactional
+    @Override
     public void update(Customer customer) {
         customerRepository.update(customer);
 
@@ -28,19 +36,19 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getById(int id) {
-        return null;
+        return customerRepository.getById(id);
     }
 
     @Override
     public List<Customer> get() {
-        return null;
+        return customerRepository.get();
     }
 
 
     @Transactional
     @Override
     public void delete(int id) {
-
+        customerRepository.delete(id);
     }
 
 }

@@ -7,6 +7,8 @@ public interface CustomerService {
 
     void add(Customer customer);
 
+    void add(List<Customer> customers);
+
     void update(Customer customer);
 
     Customer getById(int id);
