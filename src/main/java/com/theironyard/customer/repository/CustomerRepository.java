@@ -1,12 +1,10 @@
 package com.theironyard.customer.repository;
 
-import com.sun.tools.javac.util.List;
 import com.theironyard.customer.model.Customer;
 
+import java.util.List;
+
 public interface CustomerRepository {
-
-
-
 
     void add(Customer customer);
 
