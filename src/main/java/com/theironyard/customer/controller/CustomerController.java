@@ -16,11 +16,7 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-
-    @RequestMapping("/")
-    public String index() {
-        return "index";
-    }
+    
 
     @RequestMapping("/customers")
     public String customerList(Model model) {
