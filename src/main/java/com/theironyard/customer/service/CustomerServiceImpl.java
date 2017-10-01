@@ -13,7 +13,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-
     @Transactional
     @Override
     public void add(Customer customer) {
@@ -28,7 +27,6 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.add(customer);
         }
     }
-
 
     @Transactional
     @Override

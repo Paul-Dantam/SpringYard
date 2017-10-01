@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Create Customer</title>
 </head>
 <body>
+
+<h1>Create a New Customer</h1>
+
+
+<form action="add_customer" method="post">
+    <label>First name</label>
+    <input type="text" name="firstName" placeholder="Customer first name here.">
+
+    <label>Last name</label>
+    <input type="text" name="lastName" placeholder="Customer last name here.">
+
+    <label>Phone Number</label>
+    <input type="text" name="phone" placeholder="Customer phone number here.">
+
+    <label>Email</label>
+    <input type="text" name="email" placeholder="Customer email address here.">
+
+    <button type="submit">Create New Customer</button>
+</form>
+
+
+<a href = "/customers">See List of Customers</a>
+
 
 </body>
 </html>
