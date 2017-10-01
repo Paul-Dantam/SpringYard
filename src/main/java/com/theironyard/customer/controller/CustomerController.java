@@ -16,7 +16,7 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    
+
 
     @RequestMapping("/customers")
     public String customerList(Model model) {
@@ -46,6 +46,11 @@ public class CustomerController {
         customerService.add(customer);
 
         return "redirect:/customers";
+    }
+
+    @RequestMapping("new_customer")
+    public String newCustomer(Model model){
+        return "new_customer";
     }
 
 }
