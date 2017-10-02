@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-
 @Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
@@ -21,6 +20,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 
     private final String INSERT_SQL = "INSERT INTO customer (firstName, lastName, phone, email) VALUES (?,?,?,?)";
+
     @Override
     public void add(Customer customer) {
         jdbcTemplate.update(INSERT_SQL, customer.getFirstName(), customer.getLastName(), customer.getPhone(), customer.getEmail());
@@ -28,6 +28,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 
     private final String UPDATE_SQL = "update customer set firstName=?, lastName=? where id=?";
+
     @Override
     public void update(Customer customer) {
         jdbcTemplate.update(INSERT_SQL, customer.getFirstName(), customer.getLastName());
@@ -35,6 +36,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 
     private final String SELECT_BY_ID_SQL = "SELECT * FROM customer WHERE id = ?";
+
     @Override
     public Customer getById(int id) {
         return jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, new CustomerMapper(), id);
@@ -42,14 +44,15 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 
     private final String SELECT_SQL = "select * from customer";
+
     @Override
     public List<Customer> get() {
         return jdbcTemplate.query(SELECT_SQL, new CustomerMapper());
     }
 
 
-
     private final String DELETE_SQL = "delete from customer where id=?";
+
     @Override
     public void delete(int id) {
         jdbcTemplate.update(DELETE_SQL, id);

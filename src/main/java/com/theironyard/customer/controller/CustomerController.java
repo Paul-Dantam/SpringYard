@@ -18,7 +18,6 @@ public class CustomerController {
     CustomerService customerService;
 
 
-
     @RequestMapping("/customers")
     public String customerList(Model model) {
         model.addAttribute("customers", customerService.get());
@@ -36,7 +35,7 @@ public class CustomerController {
     public String addCustomer(@RequestParam(value = "firstName") String firstName,
                               @RequestParam(value = "lastName") String lastName,
                               @RequestParam(value = "email") String email,
-                              @RequestParam(value = "phone") String phone, Model model){
+                              @RequestParam(value = "phone") String phone, Model model) {
 
         Customer customer = new Customer();
         customer.setFirstName(firstName);
@@ -50,7 +49,7 @@ public class CustomerController {
     }
 
     @RequestMapping("/new_customer")
-    public String newCustomer(Model model){
+    public String newCustomer(Model model) {
         return "new_customer";
     }
 
