@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Customers</title>
+</head>
+<body>
+
+<h1>List of Customers</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Current Customers</th>
+    </tr>
+    <tbody>
+    <tr th:each="customer : ${customers}">
+        <th><span th:text="${customer.firstName}"></span> <span th:text="${customer.lastName}"></span></th>
+        <td><a th:href="@{'/customers/' + ${customer.id}}">Customer Info</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/new_customer">Create New Customer!</a>
+
+
+</body>
+</html>
