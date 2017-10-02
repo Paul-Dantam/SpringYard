@@ -1,17 +1,19 @@
 package com.theironyard.customer.service;
 
-import java.util.List;
 import com.theironyard.customer.model.Customer;
 import com.theironyard.customer.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     CustomerRepository customerRepository;
+
 
     @Transactional
     @Override
@@ -27,6 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.add(customer);
         }
     }
+
 
     @Transactional
     @Override

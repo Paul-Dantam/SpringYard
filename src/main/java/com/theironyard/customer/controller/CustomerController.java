@@ -6,6 +6,7 @@ import com.theironyard.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,8 +33,8 @@ public class CustomerController {
     }
 
     @RequestMapping("/add_customer")
-    public String addCustomer(@RequestParam(value = "first_name") String firstName,
-                              @RequestParam(value = "last_name") String lastName,
+    public String addCustomer(@RequestParam(value = "firstName") String firstName,
+                              @RequestParam(value = "lastName") String lastName,
                               @RequestParam(value = "email") String email,
                               @RequestParam(value = "phone") String phone, Model model){
 
@@ -48,7 +49,7 @@ public class CustomerController {
         return "redirect:/customers";
     }
 
-    @RequestMapping("new_customer")
+    @RequestMapping("/new_customer")
     public String newCustomer(Model model){
         return "new_customer";
     }
