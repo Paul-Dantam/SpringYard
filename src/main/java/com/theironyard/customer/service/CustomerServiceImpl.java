@@ -17,35 +17,36 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Transactional
     @Override
-    public void add(Customer customer) {
-        customerRepository.add(customer);
+    public Customer add(Customer customer) {
+      return  customerRepository.save(customer);
 
     }
 
     @Transactional
     @Override
-    public void add(List<Customer> customers) {
+    public List<Customer> add(List<Customer> customers) {
         for (Customer customer : customers) {
-            customerRepository.add(customer);
+             customerRepository.save(customers);
         }
+        return customers;
     }
 
 
     @Transactional
     @Override
-    public void update(Customer customer) {
-        customerRepository.update(customer);
+    public Customer update(Customer customer) {
+       return customerRepository.save(customer);
 
     }
 
     @Override
     public Customer getById(int id) {
-        return customerRepository.getById(id);
+        return customerRepository.findOne(id);
     }
 
     @Override
     public List<Customer> get() {
-        return customerRepository.get();
+        return customerRepository.findAll();
     }
 
 

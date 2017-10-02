@@ -1,4 +1,5 @@
 package com.theironyard.customer.service;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import com.theironyard.customer.model.Customer;
@@ -7,9 +8,9 @@ import java.util.List;
 
 public interface CustomerService {
 
-    void add(Customer customer);
-    void add(List<Customer> customers);
-    void update(Customer customer);
+    Customer add(Customer customer);
+   List<Customer> add(List<Customer> customers);
+    Customer update(Customer customer);
 
     Customer getById(int id);
 
